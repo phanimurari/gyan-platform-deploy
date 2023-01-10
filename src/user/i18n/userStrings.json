@@ -1,0 +1,17 @@
+{
+    "displayEmptyPostsText" : "No Posts",
+    "displayEmptyTagsText": "No Tags",
+    "writeAPostButtonText": "Write Post",
+    "typeButton": "button",
+    "postButtonContent": "Post",
+    "typeSubmit": "submit",
+    "createAModalHeadingContent" : "Write a Post",
+    "titleInputElementPlaceHolderText" : "Write your Post Title",
+    "descriptionInputElemenetPlaceHolderText" : "Write your Post Description",
+    "tagsInputElementPlaceHolderText" : "Write your Post Tag",
+    "createPostFormSubmitErrorMessage": "*Invalid Values",
+    "commentsText": "Comments",
+    "approvedByText": "Approved by",
+    "commnetBoxPlaceHolderText": "Write your comment",
+    "commentsButtonText" : "Comment"
+}

@@ -1,0 +1,12 @@
+{
+    "userNameInputElementPlaceHolderText": "Enter your Name",
+    "userPasswordElementPlaceHolderText": "Enter your Password",
+    "loginButtonText": "Login",
+    "loginButtonType": "submit",
+    "UserNameInputlabelDisplayText": "User Name",
+    "UserPasswordInputlabelDisplayText": "Password",
+    "invalidCredentials": "Invalid Username or Password",
+    "loginFormHeadingContent" : "Hi there! Please login",
+    "passwordInputElementType" : "password",
+    "textInputElementType" : "text"
+}
