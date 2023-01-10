@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/gyan-platform-deploy/static/js/main.3ffd455f.js",
+    "main.js": "/gyan-platform-deploy/static/js/main.f35669bd.js",
     "index.html": "/gyan-platform-deploy/index.html",
-    "main.3ffd455f.js.map": "/gyan-platform-deploy/static/js/main.3ffd455f.js.map"
+    "main.f35669bd.js.map": "/gyan-platform-deploy/static/js/main.f35669bd.js.map"
   },
   "entrypoints": [
-    "static/js/main.3ffd455f.js"
+    "static/js/main.f35669bd.js"
   ]
 }
