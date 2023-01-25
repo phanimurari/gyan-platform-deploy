@@ -9,7 +9,7 @@ import { commentType, postObjectType } from "../../stores/types";
 import CreateAPostContainer from "../CreateAPostContainer";
 import PostsContainer from "../PostContainer";
 import TagsContainer from "../TagsContainer";
-import { StyledHomeContainer, StyledTagsAndPostContainer, StyledTagsMobileViewContainer } from "./styledComponents";
+import { StyledHomeContainer, StyledTagsAndPostContainer, StyledTagsMobileViewContainer, StyledTagsViewContainer } from "./styledComponents";
 
 
 interface HomeProps {
@@ -39,7 +39,9 @@ const { userLogin, displayLoginModal, onToggleLoginModal, displayCreateApostModa
 return <StyledHomeContainer> 
     <Header setSideBarMenu={setSideBarMenu} onSearchPost={onSearchPost}onToggleLoginModal={onToggleLoginModal} isUerLoggedIn={isUerLoggedIn} onToggleCreateAPostModal={onToggleCreateAPostModal}/>
     <StyledTagsAndPostContainer>
-        <TagsContainer onToggleLoginModal={onToggleLoginModal} listOfPosts={listOfPosts} onToggleCreateAPostModal={onToggleCreateAPostModal} postFetchingApiStatus={postFetchingApiStatus} listOfPostTags={listOfPostTags} setSelectedTag={setSelectedTag} selectedPostsTag={selectedPostsTag} />
+        <StyledTagsViewContainer>
+            <TagsContainer onToggleLoginModal={onToggleLoginModal} listOfPosts={listOfPosts} onToggleCreateAPostModal={onToggleCreateAPostModal} postFetchingApiStatus={postFetchingApiStatus} listOfPostTags={listOfPostTags} setSelectedTag={setSelectedTag} selectedPostsTag={selectedPostsTag} />
+        </StyledTagsViewContainer>
         <StyledTagsMobileViewContainer>
             <SideBar listOfPostTags={listOfPostTags} setSelectedTag={setSelectedTag} selectedPostsTag={selectedPostsTag} />
         </StyledTagsMobileViewContainer>
