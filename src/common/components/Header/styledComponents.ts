@@ -59,7 +59,8 @@ export const StyledButtonAndProfileImageContainer = styled.div`${tw `flex items-
 
 
 
-export const StyledHambergurIconContainer = styled.div`${tw``}
+export const StyledHambergurIconContainer = styled.div`${tw`
+cursor-pointer`}
 
 @media ${device.mobileL} {
   ${tw`w-1/6 flex justify-center items-center`};

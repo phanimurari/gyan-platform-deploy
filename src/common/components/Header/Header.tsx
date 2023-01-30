@@ -14,6 +14,8 @@ import { StyledButtonAndProfileImageContainer, StyledHambergurIconContainer, Sty
 import InputElement from "../InputElement";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { REACT_ICON_SIZE } from "../../../user/constants";
+import { Link } from "react-router-dom";
+import { HOME_PATH } from "../../constants/routePathConstants";
 
 interface headerProps {
     onToggleLoginModal: (value: boolean) => void,
@@ -50,7 +52,9 @@ const Header = (props: headerProps) => {
     
     return <StyledHeaderContainer>
         <StyledProfileOrLogoMakerContainer>
-            <ProfileOrLogoMaker url={imageUrls.logo} size={60} />
+            <Link to={HOME_PATH}>
+                <ProfileOrLogoMaker url={imageUrls.logo} size={60} />
+            </Link>
         </StyledProfileOrLogoMakerContainer>
         <StyledInputSearchInputElementContainer>
             <AiOutlineSearch size={20}/>

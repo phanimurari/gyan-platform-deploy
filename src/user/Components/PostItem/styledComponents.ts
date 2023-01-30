@@ -42,7 +42,7 @@ justify-content: flex-end`
 
 export const StyledPostTextContentContainer = styled.div`${tw`w-full`}`
 
-export const StyledTagElement = styled.p<StyledTagElementProps>`${tw`flex items-center m-1 border font-bold rounded px-2`}
+export const StyledTagElement = styled.div<StyledTagElementProps>`${tw`flex items-center m-1 border font-bold rounded px-2 cursor-pointer`}
 color: ${props => props.randomFontColor};
 background-color: ${props => props.randomBackgroundColor}`
 
@@ -54,7 +54,7 @@ export const StyledPostTagsAndLikesAndCommentCountContainer = styled.div`${tw`fl
 
 export const StyledCommentsCount = styled.p`${tw`mx-1 text-xl font-medium`}`
 
-export const StyledCommentsAndCountCountainer = styled.div`${tw`flex items-center font-medium`}
+export const StyledCommentsAndCountCountainer = styled.div`${tw`flex items-center font-medium cursor-pointer`}
 color: ${colors.brightBlue}`
 
 export const StyledLikesContainer = styled.div`${tw`flex items-center mr-2`}`
@@ -68,17 +68,17 @@ export const StyledTextBoxElementContainer = styled.div`${tw`w-9/12 flex items-c
 border: 1px solid ${colors.borderLinerGrey}
 `
 
-export const StyledLikedIcon = styled.button`${tw`bg-white m-0 p-0`}
+export const StyledLikedIcon = styled.button`${tw`bg-white m-0 p-0 cursor-pointer`}
 border: none;
 color : ${colors.neonRed}`
 
-export const StyledUnLikedIcon = styled.button`${tw`bg-white m-0 p-0`}
+export const StyledUnLikedIcon = styled.button`${tw`bg-white m-0 p-0 cursor-pointer`}
 border: none`
 
 export const StyledCommentBoxConatiner = styled.div`${tw` flex p-4 py-6`}
 border-top: 1px solid ${colors.borderLinerGrey}`
 
-export const StyledSendButtonElement = styled.button`${tw`bg-white border-0`}
+export const StyledSendButtonElement = styled.button`${tw`bg-white border-0 cursor-pointer`}
 color: ${colors.brightBlue}`
 
 export const StyledLikeCountElement = styled.p`${tw`p-2 rounded-lg text-sm`}

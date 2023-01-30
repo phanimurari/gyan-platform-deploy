@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import { Provider } from "mobx-react";
 
 import { HOME_PATH } from './common/constants/routePathConstants';

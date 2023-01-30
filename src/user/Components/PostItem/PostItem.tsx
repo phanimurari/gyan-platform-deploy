@@ -16,7 +16,7 @@ import { useState } from 'react'
 import CommentItem from '../CommentItem'
 import TextBoxElement from '../../../common/components/TextBoxElement'
 import { GetCurrentDateAndTimeUtil } from '../../../utilis/getCurrentTimeAndDateUtilis'
-import { REACT_ICON_SIZE } from '../../constants'
+import { REACT_ICON_SIZE , EVENT_TYPE_ENTER} from '../../constants'
 import { getAccessToken } from '../../../utilis/StorageUtilis'
 import { IconContext } from 'react-icons'
 
@@ -26,6 +26,7 @@ interface postItemProps {
     addComment: (commentObject: commentType, id: string) => void,
     onPostLike: (postId: string) => void,
     onToggleLoginModal: (value: boolean) => void,
+    setSelectedTag :(id: string) => void
 }
 
 
@@ -34,7 +35,7 @@ const PostItem = (props: postItemProps) => {
     const [commentContent, setCommentContent] = useState('')
     const [isPostLiked, setisPostLiked] = useState(false)
 
-    const { post, addComment, onPostLike , onToggleLoginModal} = props
+    const { post, addComment, onPostLike , onToggleLoginModal, setSelectedTag} = props
 
     const [showComments, setShowComments] = useState(false)
 
@@ -45,14 +46,22 @@ const PostItem = (props: postItemProps) => {
         setShowComments(!showComments)
     }
 
+
+    
+
     const renderUITags = () => {
 
         const backgroundColorsArray = [colors.liteBlue, colors.greenishTela, colors.greenishTela]
         const fontColorsArray = [colors.brightBlue, colors.brightGreen, colors.neonRed]
 
-        return tags.length > 0 ? tags.map(tag => <StyledTagElement key={tag} randomBackgroundColor={backgroundColorsArray[tags.indexOf(tag) ? tags.indexOf(tag) : 0]} randomFontColor={fontColorsArray[tags.indexOf(tag) ? tags.indexOf(tag) : 0]}>
-            <AiOutlineTags size={15}/>
-            {tag}</StyledTagElement>) : null
+        return tags.length > 0 ? tags.map(tag => {   
+
+            const onClickSelectedTag = () => setSelectedTag(tag)
+
+            return <StyledTagElement key={tag} randomBackgroundColor={backgroundColorsArray[tags.indexOf(tag) ? tags.indexOf(tag) : 0]} randomFontColor={fontColorsArray[tags.indexOf(tag) ? tags.indexOf(tag) : 0]} onClick={onClickSelectedTag} >
+                <AiOutlineTags size={15} />
+                {tag}</StyledTagElement>
+        }) : null
     }
 
     const renderLikeImages = () => {
@@ -123,8 +132,14 @@ const PostItem = (props: postItemProps) => {
 
     const postThisCommentToThePost = () => {
         getAccessToken() === undefined ? onToggleLoginModal(true) : onToggleLoginModalToFalseAndCommmentContentNotEmpty()
-        
-    
+    }
+
+    const detectCtrlAndEnterKeys = (event:any) => {
+        if (event.ctrlKey && event.key === "Enter") {
+          if(commentContent !== "") {
+            postThisCommentToThePost()
+          }
+        } 
     }
 
     const renderCommentBox = () => <StyledCommentBoxConatiner>
@@ -132,17 +147,16 @@ const PostItem = (props: postItemProps) => {
             <ProfileOrLogoMaker url={imageUrls.profile} size={40}/>
         </SyledPostAuthorImageContainer>
         <StyledTextBoxElementContainer>
-            <TextBoxElement value={commentContent} placeHolderText={strings.commnetBoxPlaceHolderText} onChangeMethod={onChangeTextBoxElementValue} />
+            <TextBoxElement value={commentContent} placeHolderText={strings.commnetBoxPlaceHolderText} onChangeMethod={onChangeTextBoxElementValue} onKeyDownMethod={detectCtrlAndEnterKeys}/>
         </StyledTextBoxElementContainer>
         <StyledSendButtonElement onClick={postThisCommentToThePost}>
             <IconContext.Provider value={{ color: `${colors.brightBlue}`}}>
-                <GrSend size={REACT_ICON_SIZE} color={colors.brightBlue}/>
+            <GrSend size={REACT_ICON_SIZE} color={colors.brightBlue}/>
         </IconContext.Provider>
         </StyledSendButtonElement>
-
-
-        
     </StyledCommentBoxConatiner>
+
+
 
     const renderListOfComments = () => {
         return showComments ? <StyledCommentsAndCommentBoxContainer>

@@ -2,8 +2,6 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 import { device } from '../../../common/constants/devicesBreakPoints/index'
-import colors from '../../styleGuide/themes/colors.json'
-
 
 
 export const StyledTagsContainer = styled.div`

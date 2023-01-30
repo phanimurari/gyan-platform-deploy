@@ -45,7 +45,7 @@ return <StyledHomeContainer>
         <StyledTagsMobileViewContainer>
             <SideBar listOfPostTags={listOfPostTags} setSelectedTag={setSelectedTag} selectedPostsTag={selectedPostsTag} />
         </StyledTagsMobileViewContainer>
-        <PostsContainer onToggleLoginModal={onToggleLoginModal} listOfPosts={listOfPosts} onToggleCreateAPostModal={onToggleCreateAPostModal} postFetchingApiStatus={postFetchingApiStatus} addComment={addComment} onPostLike={onPostLike} />
+        <PostsContainer onToggleLoginModal={onToggleLoginModal} listOfPosts={listOfPosts} onToggleCreateAPostModal={onToggleCreateAPostModal} postFetchingApiStatus={postFetchingApiStatus} addComment={addComment} onPostLike={onPostLike} setSelectedTag={setSelectedTag}/>
         <ReactPopUpModal
             componentPassed={<CreateAPostContainer addPostToListOfPosts={addPostToListOfPosts} onToggleCreateAPostModal={onToggleCreateAPostModal}/>}
             displayModal={displayCreateApostModal}
