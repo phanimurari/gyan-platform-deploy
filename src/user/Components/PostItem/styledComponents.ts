@@ -13,20 +13,57 @@ interface StyledTagElementProps {
 export const StyledPostElement = styled.li`${tw`list-none py-4 px-5 my-2 font-sans rounded`}
 background-color: ${colors.white};
 border: 1px solid ${colors.borderLinerGrey};
+display: flex;
+flex-grow: 1;
+
+@media ${device.laptop} {
+  width: 800px
+}
+
+@media ${device.laptopL} {
+  width: 1000px
+}
+
+
 `
 
-export const SyledPostAuthorImageContainer = styled.div`${tw`my-2 mr-2`}`
+export const SyledPostAuthorImageContainer = styled.div`
+display: none;
+@media ${device.tablet} {
+    ${tw`flex items-start my-2 mr-2`}
+}
+`
+
 
 export const StyledPostTextContentAndOptionIconContainer = styled.div`${tw`flex items-center w-full`}
 justify-content: space-between`
 
 export const StyledPostContentContainer = styled.div`${tw`flex flex-col`}`
 
-export const StyledAuthorName = styled.p`${tw`font-medium mb-0`}`
+export const StyledPostContentContainerMobileView = styled.div`
+
+
+@media ${device.mobileL} {
+    ${tw `flex`}
+}
+
+@media ${device.tablet}{
+  ${tw`flex flex-col`}
+}
+`
+
+export const StyledProfileImageContinaerInMobileView = styled.div`${tw``}
+@media ${device.tablet} {
+    display: none
+}
+
+`
+
+export const StyledAuthorName = styled.p`${tw`font-medium mb-0 mx-1`}`
 
 export const StyledPostMainContentElement = styled.div`${tw `flex pb-4`}`
 
-export const StyledPostCreationTime = styled.p`${tw`mb-0`}
+export const StyledPostCreationTime = styled.p`${tw`mb-0 mx-1`}
 color: #a7aab0`
 
 export const StyledPostHeading = styled.h1`${tw``}`
@@ -101,7 +138,25 @@ color: ${colors.neonRed}`
 export const StyledNumberOfLikesCount = styled.p`${tw`p-0 m-0 font-medium text-xl`}
 color: ${colors.black}`
 
-export const StyledLikeIconCountContainer = styled.div`${tw`flex items-center px-3`}`
+export const StyledLikeIconCountContainer = styled.div`${tw`flex items-center px-3`}
+@media ${device.tablet} {
+    order : 0
+}
+
+`
 
 export const StyledSendIconContainer = styled.div`${tw ``}
 color: ${colors.brightBlue}`
+
+export const StyledIconImagesCountContainer = styled.div`${tw``}
+
+@media ${device.mobileS} {
+ ${tw `flex items-center order-1`}
+};
+
+@media ${device.tablet} {
+    ${tw`flex`}
+    order: 0
+}
+
+`

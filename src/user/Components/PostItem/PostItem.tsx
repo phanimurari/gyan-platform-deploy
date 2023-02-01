@@ -8,7 +8,7 @@ import userDetails from '../../../common/constants/userConstants/userContants.js
 import imageUrls from '../../../common/constants/imageUrls/imageUrls.json'
 import ProfileOrLogoMaker from "../../../common/components/ProfileOrLogoMaker"
 import { caseConvertedPostTypes, commentType } from "../../stores/types"
-import { StyledAuthorName, StyledCommentBoxConatiner, StyledCommentsAndCommentBoxContainer, StyledCommentsAndCountCountainer, StyledCommentsCount, StyledHighlightedNumberOfLikesCount, StyledLikeAndCommentsCountContainer, StyledLikeCountElement, StyledLikedIcon, StyledLikeIconCountContainer, StyledLikesContainer, StyledNumberOfLikesCount, StyledPostContentContainer, StyledPostCreationTime, StyledPostElement, StyledPostHeading, StyledPostMainContentElement, StyledPostTagsAndLikesAndCommentCountContainer, StyledPostTextContentAndOptionIconContainer, StyledPostTextContentContainer, StyledSendButtonElement, StyledTagElement, StyledTextBoxElementContainer, StyledUITagsELemenntsContainer, StyledUnLikedIcon, SyledPostAuthorImageContainer } from "./styledComponents"
+import { StyledAuthorName, StyledCommentBoxConatiner, StyledCommentsAndCommentBoxContainer, StyledCommentsAndCountCountainer, StyledCommentsCount, StyledHighlightedNumberOfLikesCount, StyledIconImagesCountContainer, StyledLikeAndCommentsCountContainer, StyledLikeCountElement, StyledLikedIcon, StyledLikeIconCountContainer, StyledLikesContainer, StyledNumberOfLikesCount, StyledPostContentContainer, StyledPostContentContainerMobileView, StyledPostCreationTime, StyledPostElement, StyledPostHeading, StyledPostMainContentElement, StyledPostTagsAndLikesAndCommentCountContainer, StyledPostTextContentAndOptionIconContainer, StyledPostTextContentContainer, StyledProfileImageContinaerInMobileView, StyledSendButtonElement, StyledTagElement, StyledTextBoxElementContainer, StyledUITagsELemenntsContainer, StyledUnLikedIcon, SyledPostAuthorImageContainer } from "./styledComponents"
 
 import strings from '../../i18n/userStrings.json'
 import { useState } from 'react'
@@ -82,8 +82,10 @@ const PostItem = (props: postItemProps) => {
     
     const renderLikes = () => {
         return <StyledLikesContainer>
-            {renderLikeImages()}
-            {renderLikedCount()}
+            <StyledIconImagesCountContainer>
+                {renderLikeImages()}
+                {renderLikedCount()}
+            </StyledIconImagesCountContainer>
             <StyledLikeIconCountContainer>
                 {renderLikeIcon()}
                 {renderLikesCount()}
@@ -163,14 +165,17 @@ const PostItem = (props: postItemProps) => {
         </SyledPostAuthorImageContainer>
         <StyledPostTextContentContainer>
         <StyledPostTextContentAndOptionIconContainer>
-          <StyledPostContentContainer>  
+          <StyledPostContentContainerMobileView>  
+            <StyledProfileImageContinaerInMobileView>
+                <ProfileOrLogoMaker url={authorImageUrl} size={50}/>
+            </StyledProfileImageContinaerInMobileView>
             <StyledAuthorName>
                 {authorName}
             </StyledAuthorName>
             <StyledPostCreationTime>
                 {dateAndTime}
             </StyledPostCreationTime>
-          </StyledPostContentContainer>
+          </StyledPostContentContainerMobileView>
             <BsThreeDots size={25}/>
         </StyledPostTextContentAndOptionIconContainer>        
         <StyledPostContentContainer>
