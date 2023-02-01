@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import tw from "twin.macro";
+import { device } from "../../../common/constants/devicesBreakPoints";
 
 import colors from '../../styleGuide/themes/colors.json'
 
@@ -23,7 +24,7 @@ export const StyledPostContentContainer = styled.div`${tw`flex flex-col`}`
 
 export const StyledAuthorName = styled.p`${tw`font-medium mb-0`}`
 
-export const StyledPostMainContentElement = styled.div`${tw `flex w-full pb-4`}`
+export const StyledPostMainContentElement = styled.div`${tw `flex pb-4`}`
 
 export const StyledPostCreationTime = styled.p`${tw`mb-0`}
 color: #a7aab0`
@@ -32,8 +33,14 @@ export const StyledPostHeading = styled.h1`${tw``}`
 
 export const StyledTagsLikeCountContainer = styled.div`${tw`flex w-1/2`}`
 
-export const StyledLikeAndCommentsCountContainer = styled.div`${tw`flex w-1/2 mr-1`}
-justify-content: flex-end`
+export const StyledLikeAndCommentsCountContainer = styled.div`
+${tw `flex justify-between`}
+
+@media ${device.tablet} {
+ ${tw`w-1/2`};
+ justify-content: flex-end
+}
+`
 
 export const StyledPostTextContentContainer = styled.div`${tw`w-full`}`
 
@@ -42,8 +49,11 @@ color: ${props => props.randomFontColor};
 background-color: ${props => props.randomBackgroundColor}`
 
         
-export const StyledPostTagsAndLikesAndCommentCountContainer = styled.div`${tw`flex justify-items-end w-full`}
-@media 
+export const StyledPostTagsAndLikesAndCommentCountContainer = styled.div`
+@media ${device.tablet} {
+ ${tw `flex justify-items-end`};
+}
+
 
 `
 
@@ -54,7 +64,13 @@ color: ${colors.brightBlue}`
 
 export const StyledLikesContainer = styled.div`${tw`flex items-center mr-2`}`
 
-export const StyledUITagsELemenntsContainer = styled.div`${tw`flex w-1/2 mr-1`}
+export const StyledUITagsELemenntsContainer = styled.div`${tw``}
+@media ${device.mobileS} {
+    ${tw `flex`}
+}
+@media ${device.tablet} {
+    ${tw `flex w-1/2 mr-1`}
+}
 `
 
 export const StyledCommentsAndCommentBoxContainer = styled.div`${tw``}`
