@@ -13,8 +13,6 @@ interface StyledTagElementProps {
 export const StyledPostElement = styled.li`${tw`list-none py-4 px-5 my-2 font-sans rounded`}
 background-color: ${colors.white};
 border: 1px solid ${colors.borderLinerGrey};
-display: flex;
-flex-grow: 1;
 
 @media ${device.laptop} {
   width: 800px
