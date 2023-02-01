@@ -3,8 +3,6 @@ import tw from "twin.macro";
 
 import colors from '../../styleGuide/themes/colors.json'
 
-import { device } from "../../../common/constants/devicesBreakPoints/index";
-
 
 interface StyledTagElementProps {
     randomBackgroundColor: string,
@@ -14,9 +12,6 @@ interface StyledTagElementProps {
 export const StyledPostElement = styled.li`${tw`list-none py-4 px-5 my-2 font-sans rounded`}
 background-color: ${colors.white};
 border: 1px solid ${colors.borderLinerGrey};
-@media ${device.laptopL} { 
-  min-width:1300px
-}
 `
 
 export const SyledPostAuthorImageContainer = styled.div`${tw`my-2 mr-2`}`

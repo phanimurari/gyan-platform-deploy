@@ -1,5 +1,3 @@
-import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-
 
 import SignInComponent from "../../../Authentication/SignIn/components/SignIn";
 import Header from "../../../common/components/Header";
@@ -50,12 +48,10 @@ return <StyledHomeContainer>
             componentPassed={<CreateAPostContainer addPostToListOfPosts={addPostToListOfPosts} onToggleCreateAPostModal={onToggleCreateAPostModal}/>}
             displayModal={displayCreateApostModal}
             onToggleLoginModal={onToggleCreateAPostModal} />
-
         <ReactPopUpModal
             componentPassed={<SignInComponent userLogin={userLogin} onToggleLoginModal={onToggleLoginModal} userLoginApiStatus={userLoginApiStatus} />}
             displayModal={displayLoginModal}
             onToggleLoginModal={onToggleLoginModal} />
-        
     </StyledTagsAndPostContainer>
 </StyledHomeContainer>
 }

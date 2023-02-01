@@ -3,7 +3,6 @@ import {BsThreeDots} from 'react-icons/bs'
 import { BiCommentDetail } from 'react-icons/bi'
 import {GrSend} from 'react-icons/gr'
 
-
 import colors from '../../styleGuide/themes/colors.json'
 import userDetails from '../../../common/constants/userConstants/userContants.json'
 import imageUrls from '../../../common/constants/imageUrls/imageUrls.json'
@@ -41,23 +40,15 @@ const PostItem = (props: postItemProps) => {
 
     const {authorImageUrl,authorName, dateAndTime , title , tags, likedBy, comments, id} = post
 
-
     const onClickShowComments = () => {
         setShowComments(!showComments)
-    }
-
-
-    
+    }    
 
     const renderUITags = () => {
-
         const backgroundColorsArray = [colors.liteBlue, colors.greenishTela, colors.greenishTela]
         const fontColorsArray = [colors.brightBlue, colors.brightGreen, colors.neonRed]
-
         return tags.length > 0 ? tags.map(tag => {   
-
             const onClickSelectedTag = () => setSelectedTag(tag)
-
             return <StyledTagElement key={tag} randomBackgroundColor={backgroundColorsArray[tags.indexOf(tag) ? tags.indexOf(tag) : 0]} randomFontColor={fontColorsArray[tags.indexOf(tag) ? tags.indexOf(tag) : 0]} onClick={onClickSelectedTag} >
                 <AiOutlineTags size={15} />
                 {tag}</StyledTagElement>
@@ -202,8 +193,6 @@ const PostItem = (props: postItemProps) => {
             {renderListOfComments()}
         </StyledPostContentContainer>
     </StyledPostElement>
-
-
 }
 
 export  {PostItem}
