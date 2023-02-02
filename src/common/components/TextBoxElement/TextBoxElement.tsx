@@ -2,7 +2,7 @@ import { StyledTextArea } from "./styledComponents"
 
 interface textBoxElementProps {
     placeHolderText: string,
-    value : string
+    value: string
     onChangeMethod: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
     onKeyDownMethod?: (event:  React.KeyboardEvent) => void,
 }

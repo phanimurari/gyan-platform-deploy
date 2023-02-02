@@ -11,6 +11,7 @@ const App = () =>
   <Provider {...stores}>
      <Switch>
       <Route exact path={HOME_PATH} component={HomeRoute} />
+      
     </Switch>
   </Provider>
 

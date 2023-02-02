@@ -144,7 +144,7 @@ class PostsStore {
                 return post
             }
         }) 
-        if (postText !== '') {
+        if (postText !="") {
             this.listOfPosts = searchedPosts    
         }
         else {

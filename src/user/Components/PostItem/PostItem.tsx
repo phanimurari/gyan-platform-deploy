@@ -56,11 +56,11 @@ const PostItem = (props: postItemProps) => {
     }
 
     const renderLikeImages = () => {
-        return likedBy.length > 0 ? likedBy.slice(0, 3).map(like => <ProfileOrLogoMaker url={like} size={20}/>) : null
+        return likedBy.length > 2 ? likedBy.slice(0, 3).map(like => <ProfileOrLogoMaker url={like} size={20}/>) : null
     }
 
     const renderLikedCount = () => {
-        return likedBy.length > 0 ? <StyledLikeCountElement>+{likedBy.length -3}</StyledLikeCountElement> : null
+        return likedBy.length > 2  ? <StyledLikeCountElement>+{likedBy.length -3}</StyledLikeCountElement> : null
     }
 
 
@@ -140,7 +140,7 @@ const PostItem = (props: postItemProps) => {
             <ProfileOrLogoMaker url={imageUrls.profile} size={40}/>
         </SyledPostAuthorImageContainer>
         <StyledTextBoxElementContainer>
-            <TextBoxElement value={commentContent} placeHolderText={strings.commnetBoxPlaceHolderText} onChangeMethod={onChangeTextBoxElementValue} onKeyDownMethod={detectCtrlAndEnterKeys}/>
+            <TextBoxElement value={commentContent} placeHolderText={strings.commnetBoxPlaceHolderText} onChangeMethod={onChangeTextBoxElementValue} onKeyDownMethod={detectCtrlAndEnterKeys} />
         </StyledTextBoxElementContainer>
         <StyledSendButtonElement onClick={postThisCommentToThePost}>
             <IconContext.Provider value={{ color: `${colors.brightBlue}`}}>
