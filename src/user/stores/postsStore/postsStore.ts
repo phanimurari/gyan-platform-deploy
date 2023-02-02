@@ -71,8 +71,6 @@ class PostsStore {
 
     onPostLike(id: string) {  
         
-        console.log(id, "idliked")
-        
         const likedPost = this.initialListOfPosts.find(post => post.id === id)
         
         const likedBy = likedPost?.likedBy
