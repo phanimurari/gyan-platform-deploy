@@ -6,7 +6,7 @@ import { device } from "../../constants/devicesBreakPoints";
 import colors from '../../StyledGuide/themes/colors.json'
 
 export const StyledHeaderContainer = styled.div`
-${tw`sticky top-0 bg-white`};
+${tw`sticky top-0 bg-white w-full`};
 @media ${device.mobileS} { 
   ${tw `flex flex-wrap p-2`}
 }
@@ -16,9 +16,7 @@ ${tw`sticky top-0 bg-white`};
 border-bottom: 1px solid ${colors.bordeGrey};  
 `
 
-export const StyledProfileOrLogoMakerContainer = styled.div`${tw`flex items-center w-1/6 px-2`}
-
-`
+export const StyledProfileOrLogoMakerContainer = styled.div`${tw`flex items-center w-1/6 px-2`}`
 
 
 export const StyledInputSearchInputElementContainer = styled.div`${tw`flex items-center rounded px-4`}
@@ -28,8 +26,7 @@ border : 1px solid ${colors.liteGrey};
  flex-grow:1
 }
 @media ${device.laptop} { 
- ${tw`flex p-2 w-1/2`}
- flex-grow:1
+ ${tw`flex p-2 w-1/4`}
 }
 `
 
@@ -51,8 +48,8 @@ export const StyledButtonAndProfileImageContainer = styled.div`${tw `flex items-
   ${tw `flex justify-between w-full py-6`}
 }
 @media ${device.laptop} {
-  ${tw`flex w-2/12`};
-  justify-content: flex-end;P
+  ${tw`flex w-2/12 pr-6`};
+  justify-content: flex-end;
   flex-grow: 1;
 }
 `
