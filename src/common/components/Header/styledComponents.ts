@@ -48,7 +48,7 @@ export const StyledButtonAndProfileImageContainer = styled.div`${tw `flex items-
   ${tw `flex justify-between w-full py-6`}
 }
 @media ${device.laptop} {
-  ${tw`flex w-2/12 pr-6`};
+  ${tw`flex w-2/12 pr-6 py-0`};
   justify-content: flex-end;
   flex-grow: 1;
 }

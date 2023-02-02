@@ -10,7 +10,7 @@ export const StyledTagsContainer = styled.div`
 }
 
 @media ${device.laptop} {
-  ${tw`flex flex-col`};
+  ${tw`flex flex-col w-full`};
 }
 
 `
