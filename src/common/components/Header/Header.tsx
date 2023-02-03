@@ -10,7 +10,7 @@ import ProfileOrLogoMaker from "../ProfileOrLogoMaker";
 import commonStrings from '../../i18n/commonStrings.json'
 import imageUrls from '../../constants/imageUrls/imageUrls.json'
 import { getAccessToken } from "../../../utilis/StorageUtilis";
-import { StyledButtonAndProfileImageContainer, StyledHambergurIconContainer, StyledHeaderContainer, StyledInputSearchInputElementContainer, StyledProfileOrLogoMakerContainer } from "./styledComponents";
+import { StyledButtonAndProfileImageContainer, StyledHambergurIconContainer, StyledHeaderContainer, StyledInputSearchInputElementContainer, StyledLogoutButtonContainer, StyledProfileIconButton, StyledProfileOrLogoMakerContainer } from "./styledComponents";
 import InputElement from "../InputElement";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { REACT_ICON_SIZE } from "../../../user/constants";
@@ -20,6 +20,7 @@ import { HOME_PATH } from "../../constants/routePathConstants";
 interface headerProps {
     onToggleLoginModal: (value: boolean) => void,
     onToggleCreateAPostModal: (value: boolean) => void
+    onToggleSignOutConfirmModal:(value: boolean) => void
     isUerLoggedIn: boolean,
     onSearchPost: (searchText: string) => void,
     setSideBarMenu : (displaySideBarMenu: boolean) => void
@@ -31,7 +32,7 @@ const Header = (props: headerProps) => {
     const [searchInputValue, onSetSearchValue] = useState('')
     
 
-    const { onToggleLoginModal, onToggleCreateAPostModal, onSearchPost } = props
+    const { onToggleLoginModal, onToggleCreateAPostModal, onSearchPost , onToggleSignOutConfirmModal} = props
 
     const { collapseSidebar } = useProSidebar();
 
@@ -41,8 +42,12 @@ const Header = (props: headerProps) => {
         onSearchPost(searchInputValue)
     }
 
+    const onClickProfileIcon = () => {
+        onToggleSignOutConfirmModal(true)
+    }
+
     const renderLoginButtonOrUserProfileLogo = () => {
-        return getAccessToken() !== undefined ? <ProfileOrLogoMaker url={imageUrls.profile} size={50}/> : <ButtonElement text={commonStrings.loginButtonText} type={commonStrings.typeButton} onClickMethod={onToggleLoginModal}/>
+        return getAccessToken() !== undefined ? <StyledProfileIconButton onClick = {onClickProfileIcon}><ProfileOrLogoMaker url={imageUrls.profile} size={50}/></StyledProfileIconButton> : <ButtonElement text={commonStrings.loginButtonText} type={commonStrings.typeButton} onClickMethod={onToggleLoginModal}/>
     }
 
     const renderWriteAPostButtonBasedOnLogin = () => {
@@ -52,9 +57,9 @@ const Header = (props: headerProps) => {
     
     return <StyledHeaderContainer>
         <StyledProfileOrLogoMakerContainer>
-            <Link to={HOME_PATH}>
+            <Link to={HOME_PATH} >
                 <ProfileOrLogoMaker url={imageUrls.logo} size={60} />
-            </Link>
+            </Link> 
         </StyledProfileOrLogoMakerContainer>
         <StyledInputSearchInputElementContainer>
             <AiOutlineSearch size={20}/>

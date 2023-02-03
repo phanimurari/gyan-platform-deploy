@@ -19,6 +19,9 @@ border-bottom: 1px solid ${colors.bordeGrey};
 export const StyledProfileOrLogoMakerContainer = styled.div`${tw`flex items-center w-1/6 px-2`}`
 
 
+export const StyledLogoutButtonContainer = styled.div`${tw``}
+`
+
 export const StyledInputSearchInputElementContainer = styled.div`${tw`flex items-center rounded px-4`}
 border : 1px solid ${colors.liteGrey};
 @media ${device.mobileL}  {
@@ -67,3 +70,5 @@ cursor-pointer`}
 display: none
 }
 `
+
+export const StyledProfileIconButton= styled.button`${tw `bg-none outline-none border-none`}`
