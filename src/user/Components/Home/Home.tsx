@@ -48,11 +48,11 @@ return <StyledHomeContainer>
         </StyledTagsMobileViewContainer>
         <PostsContainer onToggleLoginModal={onToggleLoginModal} listOfPosts={listOfPosts} onToggleCreateAPostModal={onToggleCreateAPostModal} postFetchingApiStatus={postFetchingApiStatus} addComment={addComment} onPostLike={onPostLike} setSelectedTag={setSelectedTag}/>
         <ReactPopUpModal
-            componentPassed={<SignOutConfirmModal/>}
+            componentPassed={<SignOutConfirmModal onToggleLoginModal={onToggleSignOutConfirmModal}/>}
             displayModal={displayOnLogOutModal}
             onToggleLoginModal={onToggleSignOutConfirmModal} />
         <ReactPopUpModal
-            componentPassed={<CreateAPostContainer addPostToListOfPosts={addPostToListOfPosts} onToggleCreateAPostModal={onToggleCreateAPostModal}/>}
+            componentPassed={<CreateAPostContainer addPostToListOfPosts={addPostToListOfPosts} onToggleCreateAPostModal={onToggleCreateAPostModal} />}
             displayModal={displayCreateApostModal}
             onToggleLoginModal={onToggleCreateAPostModal} />
         <ReactPopUpModal
