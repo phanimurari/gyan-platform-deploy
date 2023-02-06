@@ -123,8 +123,13 @@ const PostItem = (props: postItemProps) => {
         }
     }
 
+    const onToogleLoginModalAndAddTheComment = async () => {
+        await onToggleLoginModal(true)
+        getAccessToken() == undefined ? onToggleLoginModal(true) : onToggleLoginModalToFalseAndCommmentContentNotEmpty()
+    }
+
     const postThisCommentToThePost = () => {
-        getAccessToken() === undefined ? onToggleLoginModal(true) : onToggleLoginModalToFalseAndCommmentContentNotEmpty()
+        getAccessToken() === undefined ? onToogleLoginModalAndAddTheComment() : onToggleLoginModalToFalseAndCommmentContentNotEmpty()
     }
 
     const detectCtrlAndEnterKeys = (event:any) => {

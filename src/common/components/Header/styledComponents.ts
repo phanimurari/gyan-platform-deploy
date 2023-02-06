@@ -71,4 +71,4 @@ display: none
 }
 `
 
-export const StyledProfileIconButton= styled.button`${tw `bg-none outline-none border-none`}`
+export const StyledProfileIconButton= styled.button`${tw `bg-none outline-none border-none cursor-pointer`}`

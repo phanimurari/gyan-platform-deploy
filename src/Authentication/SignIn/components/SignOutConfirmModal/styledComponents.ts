@@ -8,13 +8,13 @@ color: ${colors.black}`
 
 export const StyledSignOutConfirmModalButtonsContainer = styled.div`${tw`flex justify-around pt-4`}`
 
-export const StyledLogOutButton = styled.button`${tw`p-4 border-none rounded font-bold`}
+export const StyledLogOutButton = styled.button`${tw`p-4 border-none rounded font-bold cursor-pointer`}
 background-color: ${colors.neonRed};
 color: ${colors.white};
 width: 100px
 `
 
-export const StyledCloseModalButton = styled.button`${tw`p-4 border-none rounded font-bold`}
+export const StyledCloseModalButton = styled.button`${tw`p-4 border-none rounded font-bold cursor-pointer`}
 background-color: ${colors.brightBlue};
 color: ${colors.white};
 width: 100px
