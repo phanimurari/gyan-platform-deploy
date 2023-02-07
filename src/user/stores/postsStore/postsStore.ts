@@ -125,7 +125,6 @@ class PostsStore {
                 if (post.tags.includes(tag)) {
                     return post
                 }
-            
             })
         }
         if (postsWithSelectedTags.length > 0) {
@@ -137,18 +136,21 @@ class PostsStore {
     }
 
     onSearchPost(postText: string) {
+        this.setSelectedTag(DEFAULT_SELECTED_TAG)
         const searchedPosts = this.initialListOfPosts.filter(post => {
             if (post.title.toLowerCase().includes(postText.toLowerCase())) {
                 return post
             }
         }) 
-        if (postText !="") {
+
+        console.log("OnSearchPost", postText) 
+
+        if (postText !== "") {
             this.listOfPosts = searchedPosts    
         }
         else {
             this.listOfPosts = this.initialListOfPosts
         }
-        
     }
 
     getPosts = async () => {

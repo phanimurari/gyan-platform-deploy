@@ -64,7 +64,19 @@ export const StyledPostMainContentElement = styled.div`${tw `flex pb-4`}`
 export const StyledPostCreationTime = styled.p`${tw`mb-0 mx-1`}
 color: #a7aab0`
 
-export const StyledPostHeading = styled.h1`${tw``}`
+export const StyledPostHeading = styled.h1`${tw``}
+@media ${device.mobileS} OR ${device.mobileM} OR ${device.mobileL} {
+    ${tw`text-base`}
+}
+
+@media ${device.tablet} {
+    ${tw `text-xl`}
+}
+
+@media ${device.laptop} {
+    ${tw `text-2xl`}
+}
+`
 
 export const StyledTagsLikeCountContainer = styled.div`${tw`flex w-1/2`}`
 
