@@ -142,10 +142,7 @@ class PostsStore {
                 return post
             }
         }) 
-
-        console.log("OnSearchPost", postText) 
-
-        if (postText !== "") {
+        if (postText != "") {
             this.listOfPosts = searchedPosts    
         }
         else {
